@@ -1,0 +1,15 @@
+.Header {
+  grid-area: header;
+  background-color: var(--ds-header-bg);
+  border-bottom: 1px solid var(--ds-gray-100);
+  height: var(--ds-header-height);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.HeaderNavList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

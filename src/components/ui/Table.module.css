@@ -1,0 +1,58 @@
+.TableContainer {
+  width: 100%;
+  overflow-x: auto;
+  position: relative;
+}
+
+.Table {
+  width: 100%;
+  caption-side: bottom;
+  border-collapse: collapse;
+}
+
+.TableHeader {
+  color: var(--ds-gray-900);
+  border-bottom: 1px solid var(--ds-gray-400);
+}
+
+.TableHead {
+  height: 36px;
+  padding-inline: 0.5rem;
+  text-align: left;
+  font-weight: 500;
+}
+
+.TableBody {
+  & .TableRow:hover {
+    background-color: var(--ds-gray-100);
+  }
+
+  & .TableCell:first-child {
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+  }
+
+  & .TableCell:last-child {
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+  }
+}
+
+.TableRow {
+  transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.TableCell {
+  color: var(--ds-gray-900);
+  padding-inline: 0.5rem;
+  padding-block: 0.625rem;
+
+  & a {
+    color: var(--ds-gray-900);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
