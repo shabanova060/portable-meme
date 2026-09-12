@@ -1,75 +1,111 @@
 .Select {
-  --_select-height: var(--ds-control-size-medium);
+  /* Layout & Box Model */
+  display: grid;
+  grid-auto-flow: column;
+  place-items: center;
+  justify-content: space-between;
+  height: var(--_select-height, var(--ds-control-size-medium));
+
+  /* Typography */
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: calc(1.25 / 0.875);
+
+  /* Appearance & Reset */
   appearance: base-select;
+  border-radius: 0.375rem;
+  border: 1px solid var(--ds-control-border);
+  background-color: var(--ds-control-bg);
+  color: var(--ds-control-fg);
+
+  /* Interaction & Transitions */
   transition:
     border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  font-weight: 400;
-  font-size: 0.875rem;
-  line-height: calc(1.25 / 0.875);
-  color: var(--ds-gray-1000);
-  border-radius: 0.375rem;
-  border: var(--ds-control-border);
-  background-color: var(--ds-background-100);
-  height: var(--_select-height);
-  width: 6rem;
-  display: flex;
-  align-items: center;
+
+  /* ==========================================================================
+     States
+     ========================================================================== */
 
   &:hover {
-    border: var(--ds-control-border-hover);
+    border-color: var(--ds-control-border-hover);
   }
 
-  &:open {
-    border: var(--ds-control-border-active);
+  &:focus-within {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
     box-shadow: var(--ds-control-shadow);
   }
 
-  &::picker-icon {
-    color: var(--ds-gray-1000);
+  &:open {
+    box-shadow: var(--ds-control-shadow);
   }
 
-  &::picker(select) {
-    appearance: base-select;
-    border: 1px solid transparent;
-    background-color: var(--ds-background-100);
-    box-shadow: var(--ds-shadow-menu);
-    padding: 6px;
-    border-radius: 12px;
-    margin-top: 0.225rem;
-    position-area: bottom span-right;
-    position-try-fallbacks: none;
-    max-height: none;
-    height: max-content;
-    overflow: visible;
-  }
+  /* ==========================================================================
+     Sizes
+     ========================================================================== */
 
   &[data-size="small"] {
     --_select-height: var(--ds-control-size-small);
   }
+
   &[data-size="medium"] {
     --_select-height: var(--ds-control-size-medium);
   }
+
   &[data-size="large"] {
     --_select-height: var(--ds-control-size-large);
+  }
+
+  /* ==========================================================================
+     Picker Pseudo-Elements
+     ========================================================================== */
+
+  &::picker-icon {
+    color: var(--ds-control-fg);
+  }
+
+  &::picker(select) {
+    /* Anchoring & Popover Layout */
+    position-area: bottom span-right;
+    position-try-fallbacks: none;
+    height: max-content;
+    max-height: none;
+    margin-top: 0.225rem;
+    padding: 6px;
+    overflow: visible;
+
+    /* Appearance */
+    appearance: base-select;
+    border-radius: 12px;
+    border: 1px solid transparent;
+    background-color: var(--ds-background-100);
+    box-shadow: var(--ds-shadow-menu);
   }
 }
 
 .SelectOption {
-  color: var(--ds-gray-1000);
+  /* Layout & Box Model */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-radius: 6px;
   height: var(--_select-height);
+
+  /* Appearance */
+  border-radius: 6px;
+  color: var(--ds-control-fg);
+
+  /* Interaction & Transitions */
   transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 
+  /* States */
   &:hover {
-    background-color: var(--ds-gray-alpha-100);
+    background-color: var(--ds-background-hover);
   }
 
+  /* Pseudo-Elements */
   &::checkmark {
     order: 1;
-    margin-left: 0.5rem;
+    margin-inline-start: 0.5rem;
   }
 }

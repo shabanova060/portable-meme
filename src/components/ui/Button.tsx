@@ -1,7 +1,7 @@
 import css from "~/components/ui/Button.module.css";
 
 export interface ButtonProps extends React.ComponentProps<"button"> {
-  variants?: "primary" | "secondary" | "tertiary";
+  variants?: "primary" | "secondary" | "tertiary" | "danger" | "warning";
   size?: "small" | "medium" | "large";
 }
 

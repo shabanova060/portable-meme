@@ -11,7 +11,7 @@
 }
 
 .TableHeader {
-  color: var(--ds-gray-900);
+  color: var(--ds-body-color);
   border-bottom: 1px solid var(--ds-gray-400);
 }
 
@@ -43,12 +43,12 @@
 }
 
 .TableCell {
-  color: var(--ds-gray-900);
+  color: var(--ds-body-color);
   padding-inline: 0.5rem;
   padding-block: 0.625rem;
 
   & a {
-    color: var(--ds-gray-900);
+    color: var(--ds-body-color);
     text-decoration: none;
 
     &:hover {

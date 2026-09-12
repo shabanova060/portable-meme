@@ -1,0 +1,97 @@
+.Input {
+  /* Layout & Box Model */
+  box-sizing: border-box;
+  width: 100%;
+  padding-inline: 0.75rem;
+
+  /* Typography */
+  font-family: var(--ds-font-sans);
+  font-weight: 400;
+
+  /* Appearance & Reset */
+  border: 1px solid var(--ds-control-border);
+  background-color: var(--ds-control-bg);
+  color: var(--ds-control-fg);
+
+  /* Interaction & Transitions */
+  transition:
+    border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ==========================================================================
+     States
+     ========================================================================== */
+
+  &:hover {
+    border-color: var(--ds-control-border-hover);
+  }
+
+  &:focus-within {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    box-shadow: var(--ds-control-shadow);
+  }
+
+  /* ==========================================================================
+     Sizes
+     ========================================================================== */
+
+  &[data-size="small"] {
+    height: var(--ds-control-size-small);
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    line-height: calc(1.25 / 0.875);
+  }
+
+  &[data-size="medium"] {
+    height: var(--ds-control-size-medium);
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    line-height: calc(1.25 / 0.875);
+  }
+
+  &[data-size="large"] {
+    height: var(--ds-control-size-large);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  /* ==========================================================================
+     Validation States
+     ========================================================================== */
+
+  &[data-invalid] {
+    border-color: transparent;
+    box-shadow: var(--ds-control-shadow-invalid);
+
+    &:hover {
+      box-shadow: var(--ds-control-shadow-invalid-hover);
+    }
+
+    &:focus-within {
+      box-shadow: var(--ds-control-shadow-invalid);
+    }
+  }
+
+  &[data-valid] {
+    border-color: transparent;
+    box-shadow: var(--ds-control-shadow-valid);
+
+    &:hover {
+      box-shadow: var(--ds-control-shadow-valid-hover);
+    }
+
+    &:focus-within {
+      box-shadow: var(--ds-control-shadow-valid);
+    }
+  }
+
+  /* ==========================================================================
+     Pseudo-Elements
+     ========================================================================== */
+
+  &::placeholder {
+    color: var(--ds-control-placeholder);
+  }
+}

@@ -1,58 +1,80 @@
 .Button {
+  /* Layout & Box Model */
+  display: grid;
+  place-items: center;
+  box-sizing: border-box;
+
+  /* Typography */
   font-family: inherit;
   font-weight: 500;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-sizing: border-box;
+
+  /* Appearance & Reset */
   appearance: none;
+  border: 1px solid var(--_btn-border, transparent);
+  background-color: var(--_btn-bg, transparent);
+  color: var(--_btn-fg, inherit);
+
+  /* Interaction & Transitions */
+  cursor: pointer;
   transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 
-  &:disabled {
-    color: var(--ds-disabled-fg);
-    background-color: var(--ds-disabled-bg);
-    border: var(--ds-disabled-border);
-    cursor: not-allowed;
-
-    &[data-variant="tertiary"] {
-      background-color: transparent;
-      border: 1px solid transparent;
-    }
-  }
+  /* ==========================================================================
+     Variants
+     ========================================================================== */
 
   &[data-variant="primary"]:not(:disabled) {
-    color: var(--ds-primary-fg);
-    background-color: var(--ds-primary-bg);
-    border: var(--ds-primary-border);
+    --_btn-fg: var(--ds-primary-fg);
+    --_btn-bg: var(--ds-primary-bg);
+    --_btn-border: var(--ds-primary-border);
 
     &:hover {
-      background-color: var(--ds-primary-bg-hover);
-      border: var(--ds-primary-border-hover);
+      --_btn-bg: var(--ds-primary-bg-hover);
     }
   }
 
   &[data-variant="secondary"]:not(:disabled) {
-    color: var(--ds-secondary-fg);
-    background-color: var(--ds-secondary-bg);
-    border: var(--ds-secondary-border);
+    --_btn-fg: var(--ds-secondary-fg);
+    --_btn-bg: var(--ds-secondary-bg);
+    --_btn-border: var(--ds-secondary-border);
 
     &:hover {
-      background-color: var(--ds-secondary-bg-hover);
-      border: var(--ds-secondary-border-hover);
+      --_btn-bg: var(--ds-secondary-bg-hover);
     }
   }
 
   &[data-variant="tertiary"]:not(:disabled) {
-    color: var(--ds-tertiary-fg);
-    background-color: var(--ds-tertiary-bg);
-    border: var(--ds-tertiary-border);
+    --_btn-fg: var(--ds-tertiary-fg);
+    --_btn-bg: var(--ds-tertiary-bg);
+    --_btn-border: var(--ds-tertiary-border);
 
     &:hover {
-      background-color: var(--ds-tertiary-bg-hover);
-      border: var(--ds-tertiary-border-hover);
+      --_btn-bg: var(--ds-tertiary-bg-hover);
     }
   }
+
+  &[data-variant="danger"]:not(:disabled) {
+    --_btn-fg: var(--ds-danger-fg);
+    --_btn-bg: var(--ds-danger-bg);
+    --_btn-border: var(--ds-danger-border);
+
+    &:hover {
+      --_btn-bg: var(--ds-danger-bg-hover);
+    }
+  }
+
+  &[data-variant="warning"]:not(:disabled) {
+    --_btn-fg: var(--ds-warning-fg);
+    --_btn-bg: var(--ds-warning-bg);
+    --_btn-border: var(--ds-warning-border);
+
+    &:hover {
+      --_btn-bg: var(--ds-warning-bg-hover);
+    }
+  }
+
+  /* ==========================================================================
+     Sizes
+     ========================================================================== */
 
   &[data-size="small"] {
     height: var(--ds-button-size-small);
@@ -76,5 +98,21 @@
     border-radius: 8px;
     font-size: 1rem;
     line-height: 1.5rem;
+  }
+
+  /* ==========================================================================
+     States
+     ========================================================================== */
+
+  &:disabled {
+    cursor: not-allowed;
+    color: var(--ds-disabled-fg);
+    background-color: var(--ds-disabled-bg);
+    border: var(--ds-disabled-border);
+
+    &[data-variant="tertiary"] {
+      background-color: transparent;
+      border: 1px solid transparent;
+    }
   }
 }
