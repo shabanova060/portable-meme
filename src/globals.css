@@ -21,6 +21,9 @@
   --ds-background-hover: #f2f2f2;
   --ds-heading-color: #171717;
   --ds-body-color: #4d4d4d;
+  --ds-error-color: #ca2a30;
+  --ds-error-bg: #ffebeb;
+  --ds-error-border: #fdd8d8;
   --ds-primary-bg: #171717;
   --ds-primary-fg: #ffffff;
   --ds-primary-border: transparent;
@@ -85,6 +88,9 @@
   --ds-background-hover: #1a1a1a;
   --ds-heading-color: #ededed;
   --ds-body-color: #a0a0a0;
+  --ds-error-color: #ff6369;
+  --ds-error-bg: #3d1719;
+  --ds-error-border: #671e22;
   --ds-primary-bg: #ededed;
   --ds-primary-fg: #0a0a0a;
   --ds-primary-border: transparent;
