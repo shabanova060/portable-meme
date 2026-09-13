@@ -1,9 +1,7 @@
+import type { ComponentProps } from "react";
 import css from "~/components/ui/Input.module.css";
 
-export interface InputProps extends Omit<
-  React.ComponentProps<"input">,
-  "size"
-> {
+export interface InputProps extends Omit<ComponentProps<"input">, "size"> {
   size?: "small" | "medium" | "large";
 }
 

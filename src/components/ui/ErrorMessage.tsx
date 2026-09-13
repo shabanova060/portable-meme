@@ -1,11 +1,12 @@
 import { Info } from "lucide-react";
+import type { ComponentProps } from "react";
 import css from "~/components/ui/ErrorMessage.module.css";
 
-export interface ErrorMessageProps extends React.ComponentProps<"p"> {
+export interface ErrorMessageProps extends ComponentProps<"p"> {
   size?: "small" | "medium" | "large";
 }
 
-export const ErrorMessage: React.FC<ErrorMessageProps> = (props) => {
+export const ErrorMessage = (props: ErrorMessageProps) => {
   const { size = "medium", children, ...rest } = props;
   return (
     <p className={css.ErrorMessage} data-size={size} {...rest}>

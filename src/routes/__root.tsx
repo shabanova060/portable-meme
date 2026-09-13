@@ -6,7 +6,15 @@ import {
   Outlet,
   Scripts,
 } from "@tanstack/react-router";
+import { createServerFn } from "@tanstack/react-start";
+import { getCookie } from "@tanstack/react-start/server";
+import { themeStore } from "~/components/ThemeSelector";
 import css from "~/globals.css?url";
+
+const getServerTheme = createServerFn({ method: "GET" }).handler(async () => {
+  const theme = getCookie("theme");
+  return theme === "dark" ? "dark" : "light";
+});
 
 export const Route = createRootRouteWithContext<{
   queryClient: QueryClient;
@@ -52,17 +60,25 @@ export const Route = createRootRouteWithContext<{
       },
     ],
   }),
-  component: () => (
-    <html lang="en" dir="ltr" data-theme="light">
-      <head>
-        <HeadContent />
-      </head>
-      <body>
-        <Outlet />
-        <Scripts />
-      </body>
-    </html>
-  ),
+  loader: async () => {
+    const theme = await getServerTheme();
+    return { theme };
+  },
+  component: () => {
+    const { theme } = Route.useLoaderData();
+    themeStore.setState(() => theme);
+    return (
+      <html lang="en" dir="ltr" data-theme={theme}>
+        <head>
+          <HeadContent />
+        </head>
+        <body>
+          <Outlet />
+          <Scripts />
+        </body>
+      </html>
+    );
+  },
   notFoundComponent: () => (
     <main>
       <h1>Not Found</h1>

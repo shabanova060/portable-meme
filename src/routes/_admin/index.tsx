@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { ThemeSelector } from "~/components/ThemeSelector";
 import { Button } from "~/components/ui/Button";
 import { ErrorMessage } from "~/components/ui/ErrorMessage";
 import { Input } from "~/components/ui/Input";
@@ -36,6 +37,7 @@ export const Route = createFileRoute("/_admin/")({
         <ErrorMessage>
           <strong>Error: </strong>something went wrong
         </ErrorMessage>
+        <ThemeSelector />
       </section>
     </main>
   ),
