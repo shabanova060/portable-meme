@@ -3,6 +3,7 @@ import { ThemeSelector } from "~/components/ThemeSelector";
 import { Button } from "~/components/ui/Button";
 import { ErrorMessage } from "~/components/ui/ErrorMessage";
 import { Input } from "~/components/ui/Input";
+import { Switch } from "~/components/ui/Switch";
 
 export const Route = createFileRoute("/_admin/")({
   component: () => (
@@ -38,6 +39,7 @@ export const Route = createFileRoute("/_admin/")({
           <strong>Error: </strong>something went wrong
         </ErrorMessage>
         <ThemeSelector />
+        <Switch />
       </section>
     </main>
   ),

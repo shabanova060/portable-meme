@@ -8,15 +8,22 @@ export interface SwitchProps extends ComponentProps<"input"> {
 export const Switch = (props: SwitchProps) => {
   const { checked = false, ...rest } = props;
   return (
-    <div className={css.SwitchContainer}>
+    <span className={css.SwitchContainer} data-slot="switch-container">
       <input
-        className={css.Switch}
+        className={css.SwitchInput}
         type="checkbox"
         role="switch"
         aria-checked={checked}
-        data-slot="switch-checkbox"
+        data-slot="switch-input"
         {...rest}
       />
-    </div>
+      <span
+        className={css.SwitchTrack}
+        aria-hidden="true"
+        data-slot="switch-track"
+      >
+        <span className={css.SwitchThumb} data-slot="switch-thumb" />
+      </span>
+    </span>
   );
 };
