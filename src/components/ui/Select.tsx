@@ -1,36 +1,45 @@
+import type { ComponentProps } from "react";
 import css from "~/components/ui/Select.module.css";
 
-export interface SelectProps extends Omit<
-  React.ComponentProps<"select">,
-  "size"
-> {
+export interface SelectProps extends Omit<ComponentProps<"select">, "size"> {
   size?: "small" | "medium" | "large";
 }
 
-export const Select: React.FC<SelectProps> = ({
-  size = "medium",
-  ...props
-}): React.JSX.Element => (
-  <select
-    className={css.Select}
-    data-size={size}
-    data-slot="select"
-    {...props}
-  />
-);
+export const Select = (props: SelectProps) => {
+  const { size = "medium", className, children, ...rest } = props;
+  return (
+    <select
+      className={css.Select}
+      data-size={size}
+      data-slot="select"
+      {...rest}
+    >
+      {children}
+    </select>
+  );
+};
+export interface SelectOptGroupProps extends ComponentProps<"optgroup"> {}
 
-export const SelectOptGroup: React.FC<React.ComponentProps<"optgroup">> = ({
-  ...props
-}): React.JSX.Element => (
-  <optgroup
-    className={css.SelectOptGroup}
-    data-slot="select-optgroup"
-    {...props}
-  />
-);
+export const SelectOptGroup = (props: SelectOptGroupProps) => {
+  const { children, ...rest } = props;
+  return (
+    <optgroup
+      className={css.SelectOptGroup}
+      data-slot="select-optgroup"
+      {...rest}
+    >
+      {children}
+    </optgroup>
+  );
+};
 
-export const SelectOption: React.FC<React.ComponentProps<"option">> = ({
-  ...props
-}): React.JSX.Element => (
-  <option className={css.SelectOption} data-slot="select-option" {...props} />
-);
+export interface SelectOptionProps extends ComponentProps<"option"> {}
+
+export const SelectOption = (props: SelectOptionProps) => {
+  const { children, ...rest } = props;
+  return (
+    <option className={css.SelectOption} data-slot="select-option" {...rest}>
+      {children}
+    </option>
+  );
+};

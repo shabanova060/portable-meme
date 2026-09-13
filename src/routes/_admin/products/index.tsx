@@ -308,7 +308,7 @@ const productData: Array<Product> = [
 ];
 
 export const Route = createFileRoute("/_admin/products/")({
-  component: (): React.JSX.Element => (
+  component: () => (
     <main>
       <h1 className="Heading" data-size="1">
         Products

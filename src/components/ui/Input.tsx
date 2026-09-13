@@ -7,15 +7,15 @@ export interface InputProps extends Omit<
   size?: "small" | "medium" | "large";
 }
 
-export const Input: React.FC<InputProps> = ({
-  size = "medium",
-  ...props
-}): React.JSX.Element => (
-  <input
-    className={css.Input}
-    type="text"
-    data-size={size}
-    data-slot="input"
-    {...props}
-  />
-);
+export const Input: React.FC<InputProps> = (props): React.JSX.Element => {
+  const { size = "medium", ...rest } = props;
+  return (
+    <input
+      className={css.Input}
+      type="text"
+      data-size={size}
+      data-slot="input"
+      {...rest}
+    />
+  );
+};

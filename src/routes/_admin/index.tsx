@@ -4,7 +4,7 @@ import { ErrorMessage } from "~/components/ui/ErrorMessage";
 import { Input } from "~/components/ui/Input";
 
 export const Route = createFileRoute("/_admin/")({
-  component: (): React.JSX.Element => (
+  component: () => (
     <main>
       <h1 className="Heading" data-size="1">
         Dashboard

@@ -52,7 +52,7 @@ export const Route = createRootRouteWithContext<{
       },
     ],
   }),
-  component: (): React.JSX.Element => (
+  component: () => (
     <html lang="en" dir="ltr" data-theme="light">
       <head>
         <HeadContent />
@@ -63,13 +63,13 @@ export const Route = createRootRouteWithContext<{
       </body>
     </html>
   ),
-  notFoundComponent: (): React.JSX.Element => (
+  notFoundComponent: () => (
     <main>
       <h1>Not Found</h1>
       <p>The page you are looking for does not exist.</p>
     </main>
   ),
-  errorComponent: (): React.JSX.Element => (
+  errorComponent: () => (
     <main>
       <h1>Error</h1>
       <p>An error occurred while loading the page.</p>

@@ -126,9 +126,7 @@ const productTableColumns = columnHelper.columns([
   }),
 ]);
 
-export const ProductTable: React.FC<{ products: Array<Product> }> = ({
-  products,
-}): React.JSX.Element => {
+export const ProductTable = ({ products }: { products: Array<Product> }) => {
   const [productTableData, _setProductTableData] = useState(products);
 
   const productTable = useTable(

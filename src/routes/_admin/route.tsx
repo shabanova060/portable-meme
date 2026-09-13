@@ -3,7 +3,7 @@ import { Header } from "~/components/layouts/Header";
 import { Sidebar } from "~/components/layouts/Sidebar";
 
 export const Route = createFileRoute("/_admin")({
-  component: (): React.JSX.Element => (
+  component: () => (
     <div className="Layout" data-layout="admin-layout">
       <Header />
       <Sidebar />

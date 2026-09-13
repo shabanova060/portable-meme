@@ -1,17 +1,20 @@
 .ErrorMessage {
+  /* Layout & Grid */
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: max-content;
   column-gap: 0.5rem;
   place-items: center;
+
+  /* Typography & Text */
   overflow-wrap: break-word;
   color: var(--ds-error-color);
 
-  &[data-size="small"] {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-  }
+  /* ==========================================================================
+     Sizes
+     ========================================================================== */
 
+  &[data-size="small"],
   &[data-size="medium"] {
     font-size: 0.875rem;
     line-height: 1.25rem;

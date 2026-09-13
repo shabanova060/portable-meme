@@ -1,51 +1,85 @@
+import type { ComponentProps } from "react";
 import css from "~/components/ui/Table.module.css";
 
-export const Table: React.FC<React.ComponentProps<"table">> = ({
-  ...props
-}): React.JSX.Element => (
-  <div className={css.TableContainer} data-slot="table-container">
-    <table className={css.Table} data-slot="table" {...props} />
-  </div>
-);
+export interface TableProps extends ComponentProps<"table"> {}
+export interface TableHeaderProps extends ComponentProps<"thead"> {}
+export interface TableBodyProps extends ComponentProps<"tbody"> {}
+export interface TableHeadProps extends ComponentProps<"th"> {}
+export interface TableRowProps extends ComponentProps<"tr"> {}
+export interface TableCellProps extends ComponentProps<"td"> {}
+export interface TableFooterProps extends ComponentProps<"tfoot"> {}
+export interface TableCaptionProps extends ComponentProps<"caption"> {}
 
-export const TableHeader: React.FC<React.ComponentProps<"thead">> = ({
-  ...props
-}): React.JSX.Element => (
-  <thead className={css.TableHeader} data-slot="table-header" {...props} />
-);
+export const Table = (props: TableProps) => {
+  const { children, ...rest } = props;
+  return (
+    <div className={css.TableContainer} data-slot="table-container">
+      <table className={css.Table} data-slot="table" {...rest}>
+        {children}
+      </table>
+    </div>
+  );
+};
 
-export const TableBody: React.FC<React.ComponentProps<"tbody">> = ({
-  ...props
-}): React.JSX.Element => (
-  <tbody className={css.TableBody} data-slot="table-body" {...props} />
-);
+export const TableHeader = (props: TableHeaderProps) => {
+  const { children, ...rest } = props;
+  return (
+    <thead className={css.TableHeader} data-slot="table-header" {...rest}>
+      {children}
+    </thead>
+  );
+};
 
-export const TableHead: React.FC<React.ComponentProps<"th">> = ({
-  ...props
-}): React.JSX.Element => (
-  <th className={css.TableHead} data-slot="table-head" {...props} />
-);
+export const TableBody = (props: TableBodyProps) => {
+  const { children, ...rest } = props;
+  return (
+    <tbody className={css.TableBody} data-slot="table-body" {...rest}>
+      {children}
+    </tbody>
+  );
+};
 
-export const TableRow: React.FC<React.ComponentProps<"tr">> = ({
-  ...props
-}): React.JSX.Element => (
-  <tr className={css.TableRow} data-slot="table-row" {...props} />
-);
+export const TableHead = (props: TableHeadProps) => {
+  const { children, ...rest } = props;
+  return (
+    <th className={css.TableHead} data-slot="table-head" {...rest}>
+      {children}
+    </th>
+  );
+};
 
-export const TableCell: React.FC<React.ComponentProps<"td">> = ({
-  ...props
-}): React.JSX.Element => (
-  <td className={css.TableCell} data-slot="table-cell" {...props} />
-);
+export const TableRow = (props: TableRowProps) => {
+  const { children, ...rest } = props;
+  return (
+    <tr className={css.TableRow} data-slot="table-row" {...rest}>
+      {children}
+    </tr>
+  );
+};
 
-export const TableFooter: React.FC<React.ComponentProps<"tfoot">> = ({
-  ...props
-}): React.JSX.Element => (
-  <tfoot className={css.TableFooter} data-slot="table-footer" {...props} />
-);
+export const TableCell = (props: TableCellProps) => {
+  const { children, ...rest } = props;
+  return (
+    <td className={css.TableCell} data-slot="table-cell" {...rest}>
+      {children}
+    </td>
+  );
+};
 
-export const TableCaption: React.FC<React.ComponentProps<"caption">> = ({
-  ...props
-}): React.JSX.Element => (
-  <caption className={css.TableCaption} data-slot="table-caption" {...props} />
-);
+export const TableFooter = (props: TableFooterProps) => {
+  const { children, ...rest } = props;
+  return (
+    <tfoot className={css.TableFooter} data-slot="table-footer" {...rest}>
+      {children}
+    </tfoot>
+  );
+};
+
+export const TableCaption = (props: TableCaptionProps) => {
+  const { children, ...rest } = props;
+  return (
+    <caption className={css.TableCaption} data-slot="table-caption" {...rest}>
+      {children}
+    </caption>
+  );
+};
