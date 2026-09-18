@@ -1,0 +1,9 @@
+.Label {
+  cursor: text;
+  text-transform: capitalize;
+  display: grid;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--ds-gray-900);
+}

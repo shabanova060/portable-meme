@@ -1,0 +1,51 @@
+.Radio {
+  appearance: none;
+  box-sizing: border-box;
+  cursor: pointer;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: var(--ds-background-100);
+  border: 1px solid var(--ds-gray-700);
+
+  &::before {
+    content: "";
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: var(--ds-gray-1000);
+    transform: scale(0);
+    transition: transform 0.12s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &:hover:not(:checked) {
+    border-color: var(--ds-gray-900);
+    background-color: var(--ds-gray-200);
+  }
+
+  &:active {
+    border-color: var(--ds-gray-600);
+
+    &::before {
+      background-color: var(--ds-gray-600);
+    }
+  }
+
+  &:checked {
+    border-color: var(--ds-gray-1000);
+    &::before {
+      transform: scale(1);
+    }
+
+    &:active {
+      border-color: var(--ds-gray-600);
+    }
+  }
+}

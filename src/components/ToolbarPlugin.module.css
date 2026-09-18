@@ -1,0 +1,7 @@
+.Toolbar {
+  display: flex;
+  background-color: var(--ds-background-100);
+  box-shadow: var(--ds-shadow-base);
+  border-radius: 6px;
+  margin-bottom: 0.875rem;
+}
