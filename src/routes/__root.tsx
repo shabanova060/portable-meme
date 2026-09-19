@@ -5,17 +5,8 @@ import {
   Outlet,
   Scripts,
 } from "@tanstack/react-router";
-import { createServerFn } from "@tanstack/react-start";
-import { getCookie } from "@tanstack/react-start/server";
 
 import css from "~/globals.css?url";
-
-export const getPreferredTheme = createServerFn({ method: "GET" }).handler(
-  async () => {
-    const theme = getCookie("data-theme");
-    return theme ?? "light";
-  },
-);
 
 export const Route = createRootRoute({
   head: () => ({
@@ -32,23 +23,25 @@ export const Route = createRootRoute({
       },
     ],
     links: [{ rel: "stylesheet", href: css }],
+    scripts: [
+      {
+        children:
+          "const storedTheme = localStorage.getItem('theme') || 'system';\n" +
+          "const resolvedTheme = storedTheme === 'system' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : storedTheme;\n" +
+          "document.documentElement.setAttribute('data-theme', resolvedTheme);",
+      },
+    ],
   }),
-  loader: async () => {
-    const theme = await getPreferredTheme();
-    return { theme };
-  },
-  component: () => {
-    const { theme } = Route.useLoaderData();
-    return (
-      <html lang="en" dir="ltr" data-theme={theme}>
-        <head>
-          <HeadContent />
-        </head>
-        <body>
-          <Outlet />
-          <Scripts />
-        </body>
-      </html>
-    );
-  },
+
+  component: () => (
+    <html lang="en" dir="ltr">
+      <head>
+        <HeadContent />
+      </head>
+      <body>
+        <Outlet />
+        <Scripts />
+      </body>
+    </html>
+  ),
 });

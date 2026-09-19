@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "jsx": "react-jsx",
-    "moduleResolution": "Bundler",
-    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "module": "preserve",
     "target": "ES2022",
     "skipLibCheck": true,
     "strictNullChecks": true,

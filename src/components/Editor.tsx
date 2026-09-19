@@ -38,6 +38,7 @@ export const Editor = () => {
           console.error(error);
         },
       }}
+      contentEditable={null}
     >
       <ToolbarPlugin />
       <RichTextPlugin

@@ -17,6 +17,9 @@ export const Route = createFileRoute("/")({
     <main>
       <Heading>Portable Meme</Heading>
       <div>
+        <ThemeSwitcher />
+      </div>
+      <div>
         <Label>Genres</Label>
         <Select>
           <SelectOptGroup label="Genres">
@@ -69,9 +72,6 @@ export const Route = createFileRoute("/")({
         <Button variant="primary">Upload</Button>
         <Button variant="secondary">Upload</Button>
         <Button variant="tertiary">Upload</Button>
-      </div>
-      <div>
-        <ThemeSwitcher />
       </div>
     </main>
   ),
