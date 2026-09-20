@@ -38,7 +38,7 @@
     transform: rotate(180deg);
   }
 
-  &[data-invalid] {
+  &[data-valid] {
     border-color: transparent;
     box-shadow:
       0 0 0 1px var(--ds-green-900),
