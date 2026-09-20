@@ -5,6 +5,7 @@ import {
   Outlet,
   Scripts,
 } from "@tanstack/react-router";
+import { ThemeProvider } from "~/components/ThemeProvider";
 
 import css from "~/globals.css?url";
 
@@ -23,14 +24,6 @@ export const Route = createRootRoute({
       },
     ],
     links: [{ rel: "stylesheet", href: css }],
-    scripts: [
-      {
-        children:
-          "const storedTheme = localStorage.getItem('theme') || 'system';\n" +
-          "const resolvedTheme = storedTheme === 'system' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : storedTheme;\n" +
-          "document.documentElement.setAttribute('data-theme', resolvedTheme);",
-      },
-    ],
   }),
 
   component: () => (
@@ -39,7 +32,9 @@ export const Route = createRootRoute({
         <HeadContent />
       </head>
       <body>
-        <Outlet />
+        <ThemeProvider defaultTheme="system" storageKey="theme">
+          <Outlet />
+        </ThemeProvider>
         <Scripts />
       </body>
     </html>

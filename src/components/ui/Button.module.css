@@ -18,6 +18,10 @@
   &[data-variant="primary"] {
     color: var(--ds-background-100);
     background-color: var(--ds-gray-1000);
+
+    &:hover {
+      background-color: var(--ds-gray-900);
+    }
   }
 
   &[data-variant="secondary"] {
