@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { ProductEditor } from "~/components/editor/ProductEditor";
 import { Button } from "~/components/ui/Button";
 import {
   Field,
@@ -37,6 +38,7 @@ export const Route = createFileRoute("/")({
             <FieldError />
           </Field>
         </section>
+        <ProductEditor />
       </section>
     </>
   ),
