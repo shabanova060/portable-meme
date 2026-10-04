@@ -16,6 +16,7 @@
     "cva": "^1.0.0-beta.12",
     "drizzle-orm": "^1.0.0-rc.4",
     "lexical": "^0.52.0",
+    "lucide-react": "^1.51.0",
     "react": "^19.3.0",
     "react-dom": "^19.3.0"
   },
