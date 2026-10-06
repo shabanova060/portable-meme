@@ -1,5 +1,6 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { ProductTable } from "~/components/ProductTable";
+import { button } from "~/components/ui/Button";
 
 type Product = {
   id: string;
@@ -217,8 +218,16 @@ export const productsData: Product[] = [
 export const Route = createFileRoute("/products/")({
   component: () => (
     <>
-      <h1 className="text-heading-40">Products</h1>
-      <section className="material-base">
+      <section className="flex justify-between items-center">
+        <h1 className="text-heading-40">Products</h1>
+        <Link
+          className={button({ intent: "primary", size: "md" })}
+          to="/products/create"
+        >
+          Create product
+        </Link>
+      </section>
+      <section className="material-base p-4">
         <ProductTable products={productsData} />
       </section>
     </>
