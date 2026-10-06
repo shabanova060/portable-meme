@@ -66,6 +66,7 @@ export function SelectTrigger(props: SelectTriggerProps) {
     </BaseSelect.Trigger>
   );
 }
+
 export interface SelectContentProps
   extends
     BaseSelect.Popup.Props,

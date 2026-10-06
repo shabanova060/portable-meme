@@ -3,7 +3,7 @@ import { cn } from "cn";
 import { cva, type VariantProps } from "cva";
 
 export const button = cva({
-  base: "cursor-pointer select-none grid place-items-center font-medium transition-colors ease-in-out duration-150 outline-none disabled:text-gray-700 disabled:bg-gray-100 disabled:cursor-not-allowed disabled:pointer-events-none",
+  base: "cursor-pointer select-none grid place-items-center font-medium transition-colors ease-in-out duration-150 outline-none data-disabled:text-gray-700 data-disabled:bg-gray-100 data-disabled:cursor-not-allowed",
   variants: {
     intent: {
       primary:
