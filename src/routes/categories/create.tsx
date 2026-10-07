@@ -1,9 +1,19 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { button } from "~/components/ui/Button";
 
-export const Route = createFileRoute('/categories/create')({
-  component: RouteComponent,
-})
-
-function RouteComponent() {
-  return <div>Hello "/categories/create"!</div>
-}
+export const Route = createFileRoute("/categories/create")({
+  component: () => (
+    <>
+      <section className="flex justify-between items-center">
+        <h1 className="text-heading-40">Create category</h1>
+        <Link
+          className={button({ intent: "primary", size: "md" })}
+          to="/categories"
+        >
+          Cancel
+        </Link>
+      </section>
+      <section className="material-base p-4">No content here yet.</section>
+    </>
+  ),
+});

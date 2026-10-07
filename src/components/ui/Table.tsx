@@ -84,7 +84,7 @@ export function TableCell(props: TableCellProps) {
   return (
     <td
       className={cn(
-        "px-2 py-2.5 has-data-[cell-link=true]:p-0 has-[[role=checkbox]]:pr-0 align-middle whitespace-nowrap last:text-right *:[[role=checkbox]]:translate-y-0.5",
+        "px-2 py-2.5 has-data-[cell-link=true]:p-0 has-[[role=checkbox]]:pr-0 align-middle whitespace-nowrap last:flex last:justify-end *:[[role=checkbox]]:translate-y-0.5",
         className,
       )}
       data-slot="table-cell"

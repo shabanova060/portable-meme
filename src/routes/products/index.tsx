@@ -22,7 +22,7 @@ type Product = {
   status: "active" | "hidden" | "inactive";
 };
 
-export const productsData: Product[] = [
+export const productData: Product[] = [
   {
     id: "01925b60-84a1-7d12-9c3f-846114b3d7a1",
     sku: "KB-MECH-PRO-01",
@@ -228,7 +228,7 @@ export const Route = createFileRoute("/products/")({
         </Link>
       </section>
       <section className="material-base p-4">
-        <ProductTable products={productsData} />
+        <ProductTable products={productData} />
       </section>
     </>
   ),
