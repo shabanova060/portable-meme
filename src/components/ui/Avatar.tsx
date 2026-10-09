@@ -8,7 +8,7 @@ export function Avatar(props: AvatarProps) {
   return (
     <BaseAvatar.Root
       className={cn(
-        "size-10 grid place-items-center overflow-hidden rounded-full select-none border-2 border-gray-1000",
+        "size-10 grid place-items-center overflow-hidden rounded-full select-none border border-gray-1000",
         className,
       )}
       data-slot="avatar"

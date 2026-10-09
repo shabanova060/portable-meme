@@ -6,6 +6,7 @@ import {
   LogOutIcon,
 } from "lucide-react";
 import { Avatar, AvatarFallBack, AvatarImage } from "~/components/ui/Avatar";
+import { Input } from "~/components/ui/Input";
 import {
   Menu,
   MenuContent,
@@ -17,12 +18,16 @@ import {
 
 export function Header() {
   return (
-    <header className="col-start-2 row-start-1 w-full bg-background-100 shadow-border h-16 flex items-center justify-between px-6">
-      <nav className="font-semibold text-xl" aria-label="Secondary Navigation">
-        <Link to="/">Admin</Link>
-      </nav>
+    <header className="col-start-2 row-start-1 w-full bg-background-100 shadow-border h-16 grid grid-cols-3 items-center px-6">
+      <Input
+        id="search"
+        name="search"
+        placeholder="Search for anything..."
+        className="col-start-2 justify-self-center w-full max-w-md"
+      />
+
       <Menu>
-        <MenuTrigger>
+        <MenuTrigger className="col-start-3 justify-self-end">
           <Avatar>
             <AvatarImage src="/avatar.png" />
             <AvatarFallBack>SA</AvatarFallBack>
@@ -41,7 +46,7 @@ export function Header() {
                   Billing
                 </Link>
               }
-            ></MenuLinkItem>
+            />
             <MenuLinkItem render={<Link to="/products" />}>
               <BellIcon />
               Notifications

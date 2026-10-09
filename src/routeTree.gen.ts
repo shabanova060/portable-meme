@@ -16,9 +16,15 @@ import { Route as BrandsCreateRouteImport } from './routes/brands/create'
 import { Route as CategoriesIndexRouteImport } from './routes/categories/index'
 import { Route as CategoriesCategoryIdRouteImport } from './routes/categories/$categoryId'
 import { Route as CategoriesCreateRouteImport } from './routes/categories/create'
+import { Route as CollectionsIndexRouteImport } from './routes/collections/index'
+import { Route as CollectionsCollectionIdRouteImport } from './routes/collections/$collectionId'
+import { Route as CollectionsCreateRouteImport } from './routes/collections/create'
 import { Route as ProductsIndexRouteImport } from './routes/products/index'
 import { Route as ProductsProductIdRouteImport } from './routes/products/$productId'
 import { Route as ProductsCreateRouteImport } from './routes/products/create'
+import { Route as PromotionsIndexRouteImport } from './routes/promotions/index'
+import { Route as PromotionsPromotionIdRouteImport } from './routes/promotions/$promotionId'
+import { Route as PromotionsCreateRouteImport } from './routes/promotions/create'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -55,6 +61,21 @@ const CategoriesCreateRoute = CategoriesCreateRouteImport.update({
   path: '/categories/create',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CollectionsIndexRoute = CollectionsIndexRouteImport.update({
+  id: '/collections/',
+  path: '/collections/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CollectionsCollectionIdRoute = CollectionsCollectionIdRouteImport.update({
+  id: '/collections/$collectionId',
+  path: '/collections/$collectionId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CollectionsCreateRoute = CollectionsCreateRouteImport.update({
+  id: '/collections/create',
+  path: '/collections/create',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProductsIndexRoute = ProductsIndexRouteImport.update({
   id: '/products/',
   path: '/products/',
@@ -70,6 +91,21 @@ const ProductsCreateRoute = ProductsCreateRouteImport.update({
   path: '/products/create',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PromotionsIndexRoute = PromotionsIndexRouteImport.update({
+  id: '/promotions/',
+  path: '/promotions/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PromotionsPromotionIdRoute = PromotionsPromotionIdRouteImport.update({
+  id: '/promotions/$promotionId',
+  path: '/promotions/$promotionId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PromotionsCreateRoute = PromotionsCreateRouteImport.update({
+  id: '/promotions/create',
+  path: '/promotions/create',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -77,11 +113,17 @@ export interface FileRoutesByFullPath {
   '/brands/create': typeof BrandsCreateRoute
   '/categories/$categoryId': typeof CategoriesCategoryIdRoute
   '/categories/create': typeof CategoriesCreateRoute
+  '/collections/$collectionId': typeof CollectionsCollectionIdRoute
+  '/collections/create': typeof CollectionsCreateRoute
   '/products/$productId': typeof ProductsProductIdRoute
   '/products/create': typeof ProductsCreateRoute
+  '/promotions/$promotionId': typeof PromotionsPromotionIdRoute
+  '/promotions/create': typeof PromotionsCreateRoute
   '/brands/': typeof BrandsIndexRoute
   '/categories/': typeof CategoriesIndexRoute
+  '/collections/': typeof CollectionsIndexRoute
   '/products/': typeof ProductsIndexRoute
+  '/promotions/': typeof PromotionsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -89,11 +131,17 @@ export interface FileRoutesByTo {
   '/brands/create': typeof BrandsCreateRoute
   '/categories/$categoryId': typeof CategoriesCategoryIdRoute
   '/categories/create': typeof CategoriesCreateRoute
+  '/collections/$collectionId': typeof CollectionsCollectionIdRoute
+  '/collections/create': typeof CollectionsCreateRoute
   '/products/$productId': typeof ProductsProductIdRoute
   '/products/create': typeof ProductsCreateRoute
+  '/promotions/$promotionId': typeof PromotionsPromotionIdRoute
+  '/promotions/create': typeof PromotionsCreateRoute
   '/brands': typeof BrandsIndexRoute
   '/categories': typeof CategoriesIndexRoute
+  '/collections': typeof CollectionsIndexRoute
   '/products': typeof ProductsIndexRoute
+  '/promotions': typeof PromotionsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -102,11 +150,17 @@ export interface FileRoutesById {
   '/brands/create': typeof BrandsCreateRoute
   '/categories/$categoryId': typeof CategoriesCategoryIdRoute
   '/categories/create': typeof CategoriesCreateRoute
+  '/collections/$collectionId': typeof CollectionsCollectionIdRoute
+  '/collections/create': typeof CollectionsCreateRoute
   '/products/$productId': typeof ProductsProductIdRoute
   '/products/create': typeof ProductsCreateRoute
+  '/promotions/$promotionId': typeof PromotionsPromotionIdRoute
+  '/promotions/create': typeof PromotionsCreateRoute
   '/brands/': typeof BrandsIndexRoute
   '/categories/': typeof CategoriesIndexRoute
+  '/collections/': typeof CollectionsIndexRoute
   '/products/': typeof ProductsIndexRoute
+  '/promotions/': typeof PromotionsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -116,11 +170,17 @@ export interface FileRouteTypes {
     | '/brands/create'
     | '/categories/$categoryId'
     | '/categories/create'
+    | '/collections/$collectionId'
+    | '/collections/create'
     | '/products/$productId'
     | '/products/create'
+    | '/promotions/$promotionId'
+    | '/promotions/create'
     | '/brands/'
     | '/categories/'
+    | '/collections/'
     | '/products/'
+    | '/promotions/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -128,11 +188,17 @@ export interface FileRouteTypes {
     | '/brands/create'
     | '/categories/$categoryId'
     | '/categories/create'
+    | '/collections/$collectionId'
+    | '/collections/create'
     | '/products/$productId'
     | '/products/create'
+    | '/promotions/$promotionId'
+    | '/promotions/create'
     | '/brands'
     | '/categories'
+    | '/collections'
     | '/products'
+    | '/promotions'
   id:
     | '__root__'
     | '/'
@@ -140,11 +206,17 @@ export interface FileRouteTypes {
     | '/brands/create'
     | '/categories/$categoryId'
     | '/categories/create'
+    | '/collections/$collectionId'
+    | '/collections/create'
     | '/products/$productId'
     | '/products/create'
+    | '/promotions/$promotionId'
+    | '/promotions/create'
     | '/brands/'
     | '/categories/'
+    | '/collections/'
     | '/products/'
+    | '/promotions/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -153,11 +225,17 @@ export interface RootRouteChildren {
   BrandsCreateRoute: typeof BrandsCreateRoute
   CategoriesCategoryIdRoute: typeof CategoriesCategoryIdRoute
   CategoriesCreateRoute: typeof CategoriesCreateRoute
+  CollectionsCollectionIdRoute: typeof CollectionsCollectionIdRoute
+  CollectionsCreateRoute: typeof CollectionsCreateRoute
   ProductsProductIdRoute: typeof ProductsProductIdRoute
   ProductsCreateRoute: typeof ProductsCreateRoute
+  PromotionsPromotionIdRoute: typeof PromotionsPromotionIdRoute
+  PromotionsCreateRoute: typeof PromotionsCreateRoute
   BrandsIndexRoute: typeof BrandsIndexRoute
   CategoriesIndexRoute: typeof CategoriesIndexRoute
+  CollectionsIndexRoute: typeof CollectionsIndexRoute
   ProductsIndexRoute: typeof ProductsIndexRoute
+  PromotionsIndexRoute: typeof PromotionsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -211,6 +289,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CategoriesCreateRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/collections/': {
+      id: '/collections/'
+      path: '/collections'
+      fullPath: '/collections/'
+      preLoaderRoute: typeof CollectionsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/collections/$collectionId': {
+      id: '/collections/$collectionId'
+      path: '/collections/$collectionId'
+      fullPath: '/collections/$collectionId'
+      preLoaderRoute: typeof CollectionsCollectionIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/collections/create': {
+      id: '/collections/create'
+      path: '/collections/create'
+      fullPath: '/collections/create'
+      preLoaderRoute: typeof CollectionsCreateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/products/': {
       id: '/products/'
       path: '/products'
@@ -232,6 +331,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProductsCreateRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/promotions/': {
+      id: '/promotions/'
+      path: '/promotions'
+      fullPath: '/promotions/'
+      preLoaderRoute: typeof PromotionsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/promotions/$promotionId': {
+      id: '/promotions/$promotionId'
+      path: '/promotions/$promotionId'
+      fullPath: '/promotions/$promotionId'
+      preLoaderRoute: typeof PromotionsPromotionIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/promotions/create': {
+      id: '/promotions/create'
+      path: '/promotions/create'
+      fullPath: '/promotions/create'
+      preLoaderRoute: typeof PromotionsCreateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -241,11 +361,17 @@ const rootRouteChildren: RootRouteChildren = {
   BrandsCreateRoute: BrandsCreateRoute,
   CategoriesCategoryIdRoute: CategoriesCategoryIdRoute,
   CategoriesCreateRoute: CategoriesCreateRoute,
+  CollectionsCollectionIdRoute: CollectionsCollectionIdRoute,
+  CollectionsCreateRoute: CollectionsCreateRoute,
   ProductsProductIdRoute: ProductsProductIdRoute,
   ProductsCreateRoute: ProductsCreateRoute,
+  PromotionsPromotionIdRoute: PromotionsPromotionIdRoute,
+  PromotionsCreateRoute: PromotionsCreateRoute,
   BrandsIndexRoute: BrandsIndexRoute,
   CategoriesIndexRoute: CategoriesIndexRoute,
+  CollectionsIndexRoute: CollectionsIndexRoute,
   ProductsIndexRoute: ProductsIndexRoute,
+  PromotionsIndexRoute: PromotionsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

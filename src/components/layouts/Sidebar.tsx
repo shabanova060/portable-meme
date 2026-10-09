@@ -17,6 +17,12 @@ export function Sidebar() {
           <li>
             <Link to="/categories">Categories</Link>
           </li>
+          <li>
+            <Link to="/collections">Collections</Link>
+          </li>
+          <li>
+            <Link to="/promotions">Promotions</Link>
+          </li>
         </ul>
       </nav>
     </div>

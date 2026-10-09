@@ -8,7 +8,10 @@ export function OTPField(props: OTPFieldProps) {
   const { className, ...rest } = props;
   return (
     <BaseOTPField.Root
-      className={cn("flex place-items-center w-full gap-2", className)}
+      className={cn(
+        "grid grid-flow-col auto-cols-max place-items-center w-full gap-2",
+        className,
+      )}
       data-slot="otp-field"
       {...rest}
     />

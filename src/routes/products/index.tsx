@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ProductTable } from "~/components/ProductTable";
-import { button } from "~/components/ui/Button";
+import { Button, button } from "~/components/ui/Button";
 
 type Product = {
   id: string;
@@ -22,7 +22,7 @@ type Product = {
   status: "active" | "hidden" | "inactive";
 };
 
-export const productData: Product[] = [
+const productData: Product[] = [
   {
     id: "01925b60-84a1-7d12-9c3f-846114b3d7a1",
     sku: "KB-MECH-PRO-01",
@@ -218,14 +218,19 @@ export const productData: Product[] = [
 export const Route = createFileRoute("/products/")({
   component: () => (
     <>
-      <section className="flex justify-between items-center">
+      <section className="grid grid-cols-[1fr_auto] items-center gap-4">
         <h1 className="text-heading-40">Products</h1>
-        <Link
-          className={button({ intent: "primary", size: "md" })}
-          to="/products/create"
-        >
-          Create product
-        </Link>
+        <div className="flex items-center gap-3">
+          <Button intent="secondary" size="md">
+            Save
+          </Button>
+          <Link
+            className={button({ intent: "primary", size: "md" })}
+            to="/products/create"
+          >
+            Create product
+          </Link>
+        </div>
       </section>
       <section className="material-base p-4">
         <ProductTable products={productData} />
