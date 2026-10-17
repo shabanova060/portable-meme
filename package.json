@@ -1,0 +1,35 @@
+{
+  "name": "portable-meme",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "bun --bun vite dev",
+    "build": "bun --bun vite build",
+    "preview": "bun --bun vite preview",
+    "prepare": "bun --bun svelte-kit sync || echo ''",
+    "check": "bun --bun svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "bun --bun svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "inspect": "SVELTE_INSPECTOR_OPTIONS=true bun --bun vite dev",
+    "format": "bun --bun fmt",
+    "lint": "bun --bun lint"
+  },
+  "devDependencies": {
+    "@fontsource-variable/geist": "^5.3.0",
+    "@fontsource-variable/geist-mono": "^5.3.0",
+    "@sveltejs/adapter-auto": "^8.0.0",
+    "@sveltejs/kit": "^3.0.0",
+    "@sveltejs/vite-plugin-svelte": "^7.2.0",
+    "@types/bun": "^1.4.3",
+    "drizzle-kit": "^1.0.0-rc.4",
+    "drizzle-orm": "^1.0.0-rc.4",
+    "svelte": "^5.57.1",
+    "svelte-check": "^4.6.0",
+    "typescript": "^6.0.3",
+    "vite": "^8.3.0"
+  },
+  "imports": {
+    "#lib": "./src/lib/index.js",
+    "#lib/*": "./src/lib/*"
+  }
+}
